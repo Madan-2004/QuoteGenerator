@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Edu SA Beginner', cursive;
+}
+
+body{
+    background-image: linear-gradient(to right, #00b4db, #0083b0);
+}
+
+.container{
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 20px;
+    background-color: aliceblue;
+    border-radius: 30px;
+    padding: 30px;
+    position: relative;
+}
+
+h1{
+    text-align: center;
+    font-size: 50px;
+    position: relative;
+    color: #0049B7;
+}
+
+h1::after{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 100px;
+    left: 50%;
+    background-color: #00DDFF;
+    border-radius: 10px;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+
+blockquote{
+    font-size: 30px;
+    margin: 50px 10px 30px 10px;
+    font-weight: 500;
+    text-align: center;
+}
+
+blockquote::before,blockquote::after{
+    content: '"';
+}
+
+span{
+    position: absolute;
+    font-size: 25px;
+    right: 20px;
+    bottom: 120px;
+}
+
+span::before{
+    content: '-';
+    margin-right: 5px;
+}
+
+.quote-box{
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 10px 30px 10px;
+}
+
+.quote-box button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    padding: 10px;
+    font-size: 20px;
+    outline: 0;
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color:#00b4db;
+    transition: 0.3s ease-in-out;
+    font-weight: 400;
+}
+
+.quote-box button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0px 0px 26px 0px aqua;
+}
+
+#Tweet{
+    background: transparent;
+    outline: 1px solid #00b4db;
+}
+
+#New{
+    color: aliceblue;
+}

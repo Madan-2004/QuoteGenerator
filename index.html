@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Quote-Generator</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Quote of the Day!</h1>
+        <blockquote>The Quote!</blockquote>
+        <span>Author!</span>
+        <div class="quote-box">
+            <button id="New">New Quote!</button>
+            <button id="Tweet"><i class="fa fa-twitter"></i>Tweet</button>
+        </div>
+    </div>
+
+    <script>
+        const url = "https://api.quotable.io/quotes/random";
+        var quote = document.querySelector("blockquote");
+        var author = document.querySelector("span");
+        var button = document.getElementById("New");
+        var tweet = document.getElementById("Tweet");
+        async function main(url){
+            const response = await fetch(url);
+            var data = await response.json();
+            quote.innerHTML = data[0].content;
+            author.innerHTML = data[0].author;
+        }
+
+        button.addEventListener("click", () => {
+            main(url);
+        })
+
+        tweet.addEventListener("click", () => {
+            window.open("https://twitter.com/intent/tweet?text=" + quote.innerHTML + "-- " + author.innerHTML );
+        })
+
+        main(url);
+    </script>
+
+</body>
+</html>
